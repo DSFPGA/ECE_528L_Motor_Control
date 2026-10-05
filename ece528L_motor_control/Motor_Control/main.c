@@ -153,7 +153,9 @@ void Drive_Pattern_1()
 }
 
 /**
- * @brief
+ * @brief When Bumper_Switches_Handler sets collision_detected, this function will be activated to prevent damage to the robot
+ * The gear motors on the robot are stopped, told to move backward, told to move to the right, and then clear collision_detected
+ * Once collision_detected is cleared, the robot continues to move forward
  *
  * @param None
  *

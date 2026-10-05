@@ -19,7 +19,11 @@
 #include "../inc/Timer_A0_PWM.h"
 
 /**
- * @brief
+ * @brief Configures several pins as GPIO ports that output signals to the gear motors on the TI-RSLK MAX
+ * Outputs a PWM, direction, and nSLEEP signals to the gear motors
+ * PWM signal indicates the speed at which the gear motor rotates
+ * Direction signal indicates if the gear motor moves forward or backword
+ * nSLEEP signal indicates whether the gear motor is enabled (set to 1) or disabled (cleared to 0)
  *
  * @param None
  *
@@ -56,22 +60,28 @@ void Motor_Forward(uint16_t left_duty_cycle, uint16_t right_duty_cycle);
 void Motor_Backward(uint16_t left_duty_cycle, uint16_t right_duty_cycle);
 
 /**
- * @brief
+ * @brief Move the left motor backward and the right motor forward with specified duty cycles.
  *
- * @param left_duty_cycle
+ * This function configures the left motor to move backward and the right motor to move forward. It updates the duty cycle for both left
+ * and right motors using Timer A0 PWM control to adjust motor speed.
  *
- * @param right_duty_cycle
+ * @param left_duty_cycle The duty cycle for the left motor (0-99%).
+ *
+ * @param right_duty_cycle The duty cycle for the right motor (0-99%).
  *
  * @return None
  */
 void Motor_Left(uint16_t left_duty_cycle, uint16_t right_duty_cycle);
 
 /**
- * @brief
+ * @brief Move the left motor forward and the right motor backward with specified duty cycles.
  *
- * @param left_duty_cycle
+ * This function configures the left motor to move forward and the right motor to move backward. It updates the duty cycle for both left
+ * and right motors using Timer A0 PWM control to adjust motor speed.
  *
- * @param right_duty_cycle
+ * @param left_duty_cycle The duty cycle for the left motor (0-99%).
+ *
+ * @param right_duty_cycle The duty cycle for the right motor (0-99%).
  *
  * @return None
  */

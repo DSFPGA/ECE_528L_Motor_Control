@@ -24,7 +24,9 @@
 #define TIMER_A0_PERIOD_CONSTANT 15000
 
 /**
- * @brief
+ * @brief First verify that the duty cycle inputs are not greater than the period constant and will end the function if either of them are.
+ * Then, P2.6-2.7 is configured to use its primary function as a timer that generates output
+ * Timer A0 operates in up/down mode, uses a 12 MHz clock source, and has its timer clock divided by 8
  *
  * @param period_constant
  *
