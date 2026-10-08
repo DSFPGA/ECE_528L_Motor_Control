@@ -33,6 +33,8 @@ For this lab, the procedure focuses on the first general test case where the osc
 
 There is a typical process for using motors which was practiced during this lab. It is desired to have the motor rotate to a specific position which would be 0 degrees. To do this, the Launchpad generates a PWM signal that is fed into the servo motor. The basis of a PWM signal is that the pulse width of the signal that is fed into the servo motor can be modified to any value between 0-99%. This allows the Launchpad to choose which direction the servo motor turns and how far it should turn. If a 50% duty cycle is the threshold to determine if the servo motor should move clockwise or counterclockwise, a 40% duty cycle would tell the motor to turn in the counterclockwise direction for a small distance. In comparison, a 90% duty cycle would tell the motor to turn in the clockwise direction and turn a greater distance compared to the 40% duty cycle. 
 
+In the procedure, Timer A2 is used to drive the servo motors. In the main function, there is a call to initialize Timer A2. Then, there are function calls to update the duty cycle of Timer A2 from 0 to 1700 or 7000. By updating the duty cycles, this changes the pulse width of the signal that is fed to the servo motors. This leads to the motor rotating to change its position to the desired angle determined by the duty cycle which emphasizes the lesson to be learned for this portion of the lab.
+
 Figure 1: Servo at 0 Degrees 
 ![Figure 1](/ece528L_gpio/Screenshots/ece528L_lab1_servo_0_degrees_group.png)
 
