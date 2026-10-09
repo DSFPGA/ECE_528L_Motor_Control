@@ -46,7 +46,7 @@ Figure 2: Servo at 0 Degrees with Pulse Width
 After the servo motor rotates to 0 degrees, the Launchpad commands the servo motor to rotate to 180 degrees. Compared to the waveform displayed in Figure 1, the waveform depicted in Figure 3 is larger. Figure 1 was meant to demonstrate the counterclockwise movement of the servo motor to 0 degrees which requires the duty cycle to be less than 50%. To demonstrate the movement of the servo motor in the clockwise direction, the duty cycle must at least be greater than 50% which explains the difference in size of the waveform in Figure 3 compared to Figure 1. 
 
 Figure 3: Servo at 180 Degrees
-![Figure 3](/ece528L_gpio/Screenshots/ece528L_lab1_servo_180_degrees_group.png)
+![Figure 3](/ece528L_motor_control/Screenshots/ece528L_lab1_servo_180_degrees_group.png)
 
 To verify that the PWM signal in Figure 3 is greater than the PWM signal in Figure 1, Figure 4 shows the waveform with the cursors to measure the pulse width of the waveform shown in Figure 3. Figure 4 depicts that the pulse width of the waveform is approximately 2400 us which is greater than the 550 us pulse width shown in Figure 2. COnsidering that the maximum pulse width of the servo motor is approximately 2400 us, the duty cycle shown here is most likely close to a 100%. This means that in Figures 1-4, the minimum and maximum duty cycles of the servo motor was tested to demonstrate how the duty cycle can affect the movement of the servo motor. 
 
@@ -62,6 +62,7 @@ Next, the Launchpad is configured to initialize Timer A0 so the proper PWM signa
 For the bumper, the terminal output is shown in Figure 5 and the oscilloscope output is shown in Figure 6. In Figure 5, each bumper is pressed to confirm that all of the bumpers have been configured correctly. Since there are 6 bumpers, each bumper is a assigned a bit from 0 to 5. Each bumper was pressed one at a time, so Figure 5 shows that there is only a single bit active at a time which is the bumper that was pressed. There are multiple instances of a bumper being pressed due to the bouncing effect which is expected. The bouncing effect is easier to see in Figure 6 where the effect causes the signal from the bumper to constantly change in value until eventually the input from the bumper has settled. After that, the interrupt signal to notify the Launchpad that the bumper has been pressed is generated as shown in the other waveform depicted in Figure 6. This will allow the Launchpad to determine that the robot has collided with an object and cease its current action to perform a different action to ideally protect itself from damage.
 
 Figure 5: Terminal Output of the Bumper
+
 ![Figure 5](/ece528L_motor_control/Screenshots/ece528L_lab1_bumper_terminal_output_group.png)
 
 Figure 6: Oscilloscope Output of the Bumper
